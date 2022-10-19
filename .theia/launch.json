@@ -1,0 +1,20 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  "version": "0.2.0",
+  "configurations": [ 
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch webDopeMain",
+      "request": "launch",
+      "mainClass": "webDopeMain",
+      "projectName": "webdope.java_640f79b9"
+    }
+  ]
+}
