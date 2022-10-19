@@ -1,0 +1,42 @@
+
+Pinging www.google.com [142.250.183.228] with 32 bytes of data:
+Reply from 142.250.183.228: bytes=32 time=42ms TTL=53
+Reply from 142.250.183.228: bytes=32 time=42ms TTL=53
+Reply from 142.250.183.228: bytes=32 time=50ms TTL=53
+Reply from 142.250.183.228: bytes=32 time=45ms TTL=53
+
+Ping statistics for 142.250.183.228:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 42ms, Maximum = 50ms, Average = 44ms
+IP address must be specified.
+IP address must be specified.
+
+Pinging www.google.com [142.250.183.228] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 142.250.183.228:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+Tracing route to www.google.com [142.250.183.228]
+over a maximum of 30 hops:
+
+  1     2 ms     3 ms     2 ms  192.168.43.1 
+  2     *        *        *     Request timed out.
+  3    42 ms    38 ms    41 ms  10.71.201.98 
+  4    41 ms    30 ms    39 ms  192.168.77.229 
+  5    47 ms    31 ms    39 ms  192.168.71.136 
+  6    33 ms    46 ms    41 ms  172.26.74.198 
+  7    40 ms    29 ms    38 ms  172.26.75.83 
+  8    39 ms    30 ms    41 ms  192.168.68.132 
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+ 11    43 ms    29 ms    40 ms  72.14.217.254 
+ 12    44 ms    30 ms    41 ms  74.125.242.129 
+ 13    47 ms    35 ms    56 ms  209.85.253.85 
+ 14    39 ms    30 ms    50 ms  142.250.183.228 
+
+Trace complete.

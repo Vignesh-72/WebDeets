@@ -10,52 +10,81 @@ public class Terminal{
     String Command;
     Process process;
     BufferedReader buff;
-    String Path = "Results.txt";
-
+    String Path = "Results.txt", target;
+    
     ArrayList<String> Results = new ArrayList<>();
         Terminal(){};
-        Terminal(String Command) throws IOException, InterruptedException{
-            this.Command = Command;
-            process();
-            createFile();
-        }
-        Terminal(String Command , String FileToSave) throws IOException, InterruptedException{
-            this.Command = Command;
-            this.Path = FileToSave;
-            process();
-            createFile();
-        }
-    
-    public void process() throws IOException, InterruptedException {
-         process = Runtime.getRuntime().exec(Command);
-         buff = new BufferedReader(new InputStreamReader(process.getInputStream()));
-         
-         String line;
-         while ((line = buff.readLine()) != null) {
-             Results.add(line);
-             System.out.println(line);
-         }
-         process.waitFor(); 
+
+    public void set_pro(String link , String path , String command){
+        this.target = link;
+        this.Path = path;
+        this.Command = command;
     }
-    public void createFile() throws IOException{
+    public void process()  {
+         try {
+process = Runtime.getRuntime().exec(Command);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+         buff = new BufferedReader(new InputStreamReader(process.getInputStream()));
+         print();
+    }
+    public void print(){
+         String line;
+         try {
+            while ((line = buff.readLine()) != null) {
+                 Results.add(line);
+                 System.out.println(line);
+             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+         try {
+            process.waitFor();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } 
+    }
+    public void createFile() throws IOException {
         FileWriter writer = new FileWriter(Path);
         for(String str: Results) {
           writer.write(str + System.lineSeparator());
         }
         writer.close();
     }
-    public void CommandSet(String command){
-        
-        if(command.contains("scan")){
-            String SubCommmand = command.substring(5);
-            String MainCommand = "ping "+SubCommmand+" & "+"help";
-            this.Command = MainCommand;
+    public void ScanDeets(String Link , String nameOfTheFile){
+        String[] dopeScanCommnads = new String[5];
+        dopeScanCommnads[0] = "ping -a -n 4 ";
+        dopeScanCommnads[1] = "ping -l 4";
+        dopeScanCommnads[2] = "ping -n ";
+        dopeScanCommnads[3] = "ping -i 10 ";
+        dopeScanCommnads[4] = "tracert -d "; 
+
+        if(Path == "null"){
+            this.target = Link;
+        for (int i = 0; i < dopeScanCommnads.length; i++) {
+            this.Command = dopeScanCommnads[i] + Link;
             System.out.println(Command);
-            return;
+            process();
+            }
         }
-            this.Command = command;
-            return;       
+        else{
+            Path = nameOfTheFile;
+            for (int i = 0; i < dopeScanCommnads.length; i++) {
+                this.Command = dopeScanCommnads[i] + Link;
+                System.out.println(Command);
+                process();
+                try {
+                    createFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+            }
+        }
+        
     }
+        
+    }
+    
 
     
 }
