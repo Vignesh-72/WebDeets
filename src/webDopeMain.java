@@ -56,9 +56,10 @@ public class webDopeMain{
                                 System.out.println("[2 - Send ICMP Echo Requests]");
                                 System.out.println("[3 - Set The Size, In Bytes, Of The Echo-Request Packet And Ping]");
                                 System.out.println("[4 - Time In The Internet Timestamp Format Of Echo Request And Echo reply]");
-                                System.out.println("[5 - Set Time To Live TTL And Ping]");
-                                System.out.println("[6 - Ping a Hyper-V Network Virtualization Provider Address]");
-                                System.out.println("[7 - Full-Pinging , Do All And Display]");
+                                System.out.println("[5 - Specify the number of hops between the source To target :]");
+                                System.out.println("[6 - Set Time To Live TTL And Ping]");
+                                System.out.println("[7 - Ping a Hyper-V Network Virtualization Provider Address]");
+                                System.out.println("[8 - Full-Pinging , Do All And Display]");
                                 System.out.print("\n$ ");
                                 pinging_Option = scanner.nextInt();
                                 terminal.ping_Section(pinging_Option,link, Path);
