@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class webDopeMain{
@@ -40,7 +39,6 @@ public class webDopeMain{
                             option = scanner.nextInt();
                             terminal.pc_Info_Section(option,Path);
 
-
                             break;
                         case 2:
         
@@ -77,9 +75,7 @@ public class webDopeMain{
 
                 
                 }
-            
-            
+
         }
+        
     }
-
-
