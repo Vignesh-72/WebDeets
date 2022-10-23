@@ -3,7 +3,7 @@
 ![App Start Up Preview](https://user-images.githubusercontent.com/107568580/197386434-960174ed-cd4f-424b-b1eb-a932b229e701.png)
 
 
->Start Preview
+>Start Up Preview
 
 >• This App Is Created Based On NetWorking It Can Usefull To Find Details About The User Pc , DeskTop
 
