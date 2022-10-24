@@ -12,9 +12,9 @@
 >
 >• Easy To Use And Save The Progress In File With Any Extension txt,XML,CSV
 >
->• Collect Max Details About The Site You 
+>• Collect Max Details About The WebSite 
 >
->• Support Only In Windows
+>• Supported Only In Windows
 
 
 © Vicky
