@@ -1,7 +1,6 @@
 # WebDope-App
 
-![App Start Up Preview](https://user-images.githubusercontent.com/107568580/197386434-960174ed-cd4f-424b-b1eb-a932b229e701.png)
-
+![Untitled](https://user-images.githubusercontent.com/107568580/197456339-dad9e380-b4db-431c-ac72-7942e19e1944.png)
 
 >Start-Up Preview
 
@@ -19,3 +18,4 @@
 
 
 © Vicky
+
