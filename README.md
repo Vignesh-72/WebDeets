@@ -17,5 +17,10 @@
 >• Supported Only In Windows
 
 
-© Vicky
+![pc_info](https://user-images.githubusercontent.com/107568580/197766502-5148d8cc-af01-4bae-b6e4-f95d6eea6859.png)
 
+> Pc-Info Preview
+
+![deets_scan](https://user-images.githubusercontent.com/107568580/197766612-a0519810-19f3-405d-8c37-7ded53d961ae.png)
+
+> Deets-Scan Preview
