@@ -11,10 +11,10 @@
     },
     {
       "type": "java",
-      "name": "Launch webDopeMain",
+      "name": "Launch webDeetsMain",
       "request": "launch",
-      "mainClass": "webDopeMain",
-      "projectName": "webdope.java_640f79b9"
+      "mainClass": "webDeetsMain",
+      "projectName": "webdeets.java_640f79b9"
     }
   ]
 }
