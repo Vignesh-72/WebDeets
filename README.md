@@ -1,4 +1,4 @@
-# WebDope-App
+# WebDeets-App
 
 ![Untitled](https://user-images.githubusercontent.com/107568580/197456339-dad9e380-b4db-431c-ac72-7942e19e1944.png)
 
