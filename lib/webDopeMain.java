@@ -12,8 +12,8 @@ public class webDopeMain{
                     if(fileOp.contains("y") || fileOp.contains("Y") ){
                         System.out.print("File Name : ");
                         Path = scanner.nextLine();
-
                     }
+        
             terminal terminal = new terminal();
 
             System.out.println("\n\n\n\n\n\n\n\n");
@@ -50,6 +50,7 @@ public class webDopeMain{
                             int pinging_Option = scanner.nextInt();
 
                             if(pinging_Option == 1){
+                                
                                 System.out.println("\n[1 - Ping The IP Address]");
                                 System.out.println("[2 - Send ICMP Echo Requests]");
                                 System.out.println("[3 - Set The Size, In Bytes, Of The Echo-Request Packet And Ping]");
@@ -70,11 +71,10 @@ public class webDopeMain{
 
                             break;
                         default:
-                            scanner.close();
                             break;
                     }
-
-                
+                    scanner.close();
+               
                 }
 
         }
