@@ -6,44 +6,21 @@ import java.util.Scanner;
 import java.io.FileWriter;
 
 public class deetsTerminal {
-    private
+
+    public
+
     String Command;
+    String outText = "";
     Process process;
     BufferedReader buff;
     String Path = "Results.txt", target;
     Scanner scanner = new Scanner(System.in);
     ArrayList<String> Results = new ArrayList<>();
-
-    ArrayList<String> deetsCommand = new ArrayList<>();
-    this.target = Link;
-    deetsCommand.add("ping ");
-    deetsCommand.add("ping -n ");
-    deetsCommand.add("ping -l ");
-    deetsCommand.add("ping -s ");
-    deetsCommand.add("ping -r ");
-    deetsCommand.add("ping -i ");
-    deetsCommand.add("ping -p ");
-
-    ArrayList<String> netStatCommand = new ArrayList<>();
-    netStatCommand.add("netstat -a");
-    netStatCommand.add("netstat -b");
-    netStatCommand.add("netstat -e");
-    netStatCommand.add("netstat -n");
-    netStatCommand.add("netstat -o");
-    netStatCommand.add("netstat -r");
-    netStatCommand.add("netstat -v");
-
-
-    deetsTerminal(){
-        System.out.println("Process Started ");
-    }
-    public void set_pro(String link , String path , String command){
-        this.target = link;
-        this.Path = path;
-        this.Command = command;
-    }
+    int temp = 0;
+    ouputScreen frame1 = new ouputScreen();
 
     public void process()  {
+        System.out.println("Processing ! :" + Command);
          try {
             process = Runtime.getRuntime().exec(Command);
         } catch (IOException e) {
@@ -54,10 +31,11 @@ public class deetsTerminal {
     }
 
     public void print(){
-         String line;
+        String line;
          try {
             while ((line = buff.readLine()) != null) {
                  Results.add(line);
+                 outText += line + "\n";
                  System.out.println(line);
              }
         } catch (IOException e) {
@@ -68,6 +46,7 @@ public class deetsTerminal {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } 
+       
     }
     
     public void createFile() throws IOException {
@@ -76,6 +55,28 @@ public class deetsTerminal {
           writer.write(str + System.lineSeparator());
         }
         writer.close();
+        
     }
+    public void outputScreen(){
+        frame1.setVisible(true);
+        frame1.jTextArea1.setText(outText);
+    }
+    public void deets_scan(int index){
+
+        System.out.println("deets_scan");
+        ArrayList<String> netStatCommand = new ArrayList<>();
+        netStatCommand.add("netstat -a");
+        netStatCommand.add("netstat -b");
+        netStatCommand.add("netstat -e");
+        netStatCommand.add("netstat -n");
+        netStatCommand.add("netstat -o");
+        netStatCommand.add("netstat -r");
+        netStatCommand.add("netstat -v");
+        
+            Command = netStatCommand.get(index);
+            System.out.println("inside if | "+ Command);
+            process();
+    }
+    
 
 }
