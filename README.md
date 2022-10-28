@@ -24,3 +24,21 @@
 ![deets_scan](https://user-images.githubusercontent.com/107568580/197766612-a0519810-19f3-405d-8c37-7ded53d961ae.png)
 
 > Deets-Scan Preview
+ 
+ >Preview How The App Work
+ 
+![2](https://user-images.githubusercontent.com/107568580/198605857-7f371dbd-a14a-47d4-87b0-358523a90c2b.png)
+
+>Select The Option 
+
+> If You Like To Save The Details In A File The Press Save Button 
+
+![3](https://user-images.githubusercontent.com/107568580/198607863-95029bd2-b214-4607-9728-41e31be14282.png)
+ 
+>Then Select The File
+
+>The Press Start Button
+
+![4](https://user-images.githubusercontent.com/107568580/198608491-6ba792e2-6bec-4174-86a4-76f9705f4b5a.png)
+
+>The Output Srceen Will Be Appear With Details You Asked 
