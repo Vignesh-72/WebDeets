@@ -1,3 +1,6 @@
+import java.io.IOException;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author Vicky
@@ -5,16 +8,34 @@
 
 public class pc_infoFrame extends javax.swing.JFrame {
 
- 
+    /**
+     * Creates new form pc_infoFrame
+     */
     public pc_infoFrame() {
-        this.setTitle("WebDeets-PcInfo");
+        setFalse();
         initComponents();
+        this.setTitle("WebDeets-PcInfo");
     }
-
+    
+    deetsTerminal terminal = new deetsTerminal();
+    Boolean[] bool  = new Boolean[7];
+    public void setFalse(){
+        for (int index = 0; index < bool.length; index++) {
+            bool[index] = false;
+        }
+    }
+    public void testing(){
+        System.out.println("______________________");
+        for (Boolean iterable_element : bool) {
+            System.out.println(iterable_element);
+        }
+    }
+    String path_Of_File = "null";
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code.
      */
+
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -55,6 +76,11 @@ public class pc_infoFrame extends javax.swing.JFrame {
         jCheckBox3.setBackground(new java.awt.Color(204, 204, 204));
         jCheckBox3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jCheckBox3.setText("Display The Address And The Port Number In The Form Of Numerical");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
 
         jCheckBox4.setBackground(new java.awt.Color(204, 204, 204));
         jCheckBox4.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -77,6 +103,11 @@ public class pc_infoFrame extends javax.swing.JFrame {
         jCheckBox6.setBackground(new java.awt.Color(204, 204, 204));
         jCheckBox6.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jCheckBox6.setText("Ink Or Hearing Port Sequence For Every Executable is Shown");
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
 
         jCheckBox7.setBackground(new java.awt.Color(204, 204, 204));
         jCheckBox7.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -132,6 +163,11 @@ public class pc_infoFrame extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Start");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 153, 153));
         jButton2.setText("Cancel");
@@ -195,45 +231,118 @@ public class pc_infoFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>  
+                    
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+       if(jCheckBox2.isSelected()){
+        bool[0] = true;
+       }
+       else{
+        bool[0] = false;
+       }
+       testing();
+    }                                          
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(jCheckBox1.isSelected()){
+            bool[1] = true;
+           }
+           else{
+            bool[1] = false;
+           }
+           testing();
+    }                                          
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(jCheckBox4.isSelected()){
+            bool[3] = true;
+           }
+           else{
+            bool[3] = false;
+           }
+           testing();
+    }                                          
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
+    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(jCheckBox7.isSelected()){
+            bool[6] = true;
+           }
+           else{
+            bool[6] = false;
+           }
+           testing();
+    }                                          
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(jCheckBox5.isSelected()){
+            bool[4] = true;
+           }
+           else{
+            bool[4] = false;
+           }
+           testing();
+    }         
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(jCheckBox6.isSelected()){
+            bool[5] = true;
+           }
+           else{
+            bool[5] = false;
+           }
+           testing();
+    }                                          
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String FilePath = "null";        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        if(jCheckBox3.isSelected()){
+            bool[2] = true;
+           }
+           else{
+            bool[2] = false;
+           }
+           testing();
+    }                                          
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+        JFileChooser jFileChooser1 = new JFileChooser();
+    int response = jFileChooser1.showOpenDialog(null);
+
+        if(response  == JFileChooser.APPROVE_OPTION){
+            path_Of_File = jFileChooser1.getSelectedFile().getAbsolutePath();
+        }
+    System.out.println("Location : " + path_Of_File);
+    terminal.Path = path_Of_File;     
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+                                                 
+        for (int index = 0; index < bool.length; index++) {
+            if(bool[index] == true){
+            terminal.deets_scan(index);
+           }
+          
+        }
+        terminal.outputScreen();
+
+       try {
+           if(path_Of_File != null){ 
+            terminal.createFile();
+           }
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+    }     
+                           
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -259,7 +368,8 @@ public class pc_infoFrame extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify 
+    private javax.swing.JFileChooser jFileChooser1;                    
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -272,5 +382,5 @@ public class pc_infoFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
