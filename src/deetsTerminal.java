@@ -1,7 +1,11 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.net.*;
 import java.util.List;
 
@@ -50,6 +54,8 @@ public class deetsTerminal {
     }
     
     public void createFile() throws IOException {
+        System.out.println("Path");
+        System.out.println("Creating");
         FileWriter writer = new FileWriter(Path);
         for(String str: Results) {
           writer.write(str + System.lineSeparator());
@@ -81,7 +87,8 @@ public class deetsTerminal {
         try {
             InetAddress[] myHost = InetAddress.getAllByName(URL);
             for (InetAddress inetAddress : myHost) {
-                this.outText = inetAddress.getHostAddress();
+                this.outText += inetAddress.getHostAddress() + '\n';
+                System.out.println(outText);
                 outputScreen();
             } 
         } catch (Exception e) {
@@ -98,38 +105,72 @@ public class deetsTerminal {
             url = new URL(URL);
             urlStream = url.openStream();
             html = new DataInputStream(urlStream);
-            int i = 0;
             while ((line = html.readLine()) != null) {
-                i++;
-                if(i == 10){
-                    this.outText = "\n";
-                }                
-                this.outText = line ;
+                this.outText += line + "\n" ;
                 System.out.println(line);
-                outputScreen();
             }
         } catch (Exception e) {
             e.fillInStackTrace();
         }
-    }
-    public void port_scan(String URL) {
-        System.out.println("Entered port_scan");
-        for(int port = 1 ; port <= 65535 ; port++){
-            System.out.println("Inside For ");
-            Socket socket = new Socket();
-            try {
-                System.out.println("Socket Connecting");
-                socket.connect(new InetSocketAddress(URL, port),1000);
-                socket.close();
-                this.outText = "Port " + port + " Is Open \n";
-                outputScreen();
-                System.out.println("Port " + port + " Is Open \n");
-                System.out.println("Done \n ------------ \n");
-                
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            createFile();
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
         }
+        outputScreen();
+        try {
+            System.out.println("Createing file start" + this.Path);
+            createFile();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    public void port_scan(String URL)   {
+        this.outputScreen();
+       
+        getport_scan(URL);
+    }
+
+    public void getport_scan(String ip) {
+
+        ConcurrentLinkedQueue openPorts = new ConcurrentLinkedQueue<>();
+        ExecutorService executorService = Executors.newFixedThreadPool(50);
+        AtomicInteger port = new AtomicInteger(0);
+        while (port.get() < 1000) {
+            final int currentPort = port.getAndIncrement();
+            executorService.submit(() -> {
+                try {
+                    Socket socket = new Socket();
+                    socket.connect(new InetSocketAddress(ip, currentPort), 200);
+                    socket.close();
+                    openPorts.add(currentPort);
+                    System.out.println(ip + " ,port open: " + currentPort);
+                    this.outText += ip + " ,port open: " + currentPort + "\n";     
+                }
+                catch (IOException e) {}
+            });
+        }
+        executorService.shutdown();
+        try {
+            executorService.awaitTermination(10, TimeUnit.MINUTES);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        List openPortList = new ArrayList<>();
+        System.out.println("openPortsQueue: " + openPorts.size());
+        while (!openPorts.isEmpty()) {
+            openPortList.add(openPorts.poll());
+        }
+        try {
+            createFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(this.outText);
     }
     public void Cookie (String str) throws IOException   {
         CookieManager cm = new CookieManager();
