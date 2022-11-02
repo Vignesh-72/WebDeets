@@ -17,12 +17,12 @@ public class deetsTerminal {
     String outText = "";
     Process process;
     BufferedReader buff;
-    String Path = "Results.txt", target;
+    String Path = "null", target;
     Scanner scanner = new Scanner(System.in);
     ArrayList<String> Results = new ArrayList<>();
     int temp = 0;
     ouputScreen frame1 = new ouputScreen();
-
+   
     public void process()  {
         System.out.println("Processing ! :" + Command);
          try {
@@ -53,15 +53,31 @@ public class deetsTerminal {
        
     }
     
-    public void createFile() throws IOException {
-        System.out.println("Path");
-        System.out.println("Creating");
-        FileWriter writer = new FileWriter(Path);
-        for(String str: Results) {
-          writer.write(str + System.lineSeparator());
-        }
-        writer.close();
+    public void createFile()   {
+
+        System.out.println("Inside createFile() " + this.Path);
         
+        try (FileWriter writer = new FileWriter(this.Path)) {
+            for(String str: Results) {
+              writer.write(str + System.lineSeparator());
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+    }
+    public void advance_createFile()   {
+        System.out.println("Inside createFile() " + this.Path);
+        
+        try (FileWriter writer = new FileWriter(this.Path)) {
+              writer.write(this.outText + System.lineSeparator());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        this.outputScreen();
+    }
+
     }
     public void outputScreen(){
         frame1.setVisible(true);
@@ -80,8 +96,8 @@ public class deetsTerminal {
         netStatCommand.add("netstat -v");
         
             Command = netStatCommand.get(index);
-            System.out.println("inside if | "+ Command);
-            process();
+            this.process();
+            this.createFile();
     }
     public void all_ipOf_Host(String URL){
         try {
@@ -94,6 +110,7 @@ public class deetsTerminal {
         } catch (Exception e) {
            e.printStackTrace();
         }
+        this.advance_createFile();
         
     }
     public void content_Of_WebPage(String URL) {
@@ -112,29 +129,10 @@ public class deetsTerminal {
         } catch (Exception e) {
             e.fillInStackTrace();
         }
-        try {
-            createFile();
-        } catch (IOException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
-        outputScreen();
-        try {
-            System.out.println("Createing file start" + this.Path);
-            createFile();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        this.outputScreen();
+        this.advance_createFile();
     }
     public void port_scan(String URL)   {
-        this.outputScreen();
-       
-        getport_scan(URL);
-    }
-
-    public void getport_scan(String ip) {
-
         ConcurrentLinkedQueue openPorts = new ConcurrentLinkedQueue<>();
         ExecutorService executorService = Executors.newFixedThreadPool(50);
         AtomicInteger port = new AtomicInteger(0);
@@ -143,11 +141,11 @@ public class deetsTerminal {
             executorService.submit(() -> {
                 try {
                     Socket socket = new Socket();
-                    socket.connect(new InetSocketAddress(ip, currentPort), 200);
+                    socket.connect(new InetSocketAddress(URL, currentPort), 200);
                     socket.close();
                     openPorts.add(currentPort);
-                    System.out.println(ip + " ,port open: " + currentPort);
-                    this.outText += ip + " ,port open: " + currentPort + "\n";     
+                    System.out.println(URL + " ,port open: " + currentPort);
+                    this.outText += URL + " ,port open: " + currentPort + "\n";     
                 }
                 catch (IOException e) {}
             });
@@ -165,14 +163,13 @@ public class deetsTerminal {
         while (!openPorts.isEmpty()) {
             openPortList.add(openPorts.poll());
         }
-        try {
-            createFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(this.outText);
+        
+       this.advance_createFile();
+        this.outputScreen();
     }
+
     public void Cookie (String str) throws IOException   {
+        System.out.println("Inside Cookise Function Path : "+ this.Path);
         CookieManager cm = new CookieManager();
         CookieHandler.setDefault(cm);
    
@@ -184,7 +181,7 @@ public class deetsTerminal {
    
         List<URI> uriList = cs.getURIs();
         for (URI uri : uriList) {
-           this.outText = uri.getHost() + "\n";
+           this.outText += uri.getHost() + "\n";
            this.outputScreen();
         }
    
@@ -192,13 +189,16 @@ public class deetsTerminal {
         for (HttpCookie hc : hcList) {
            System.out.println("Cookie: " + hc.getName());
            System.out.println("Value: " + hc.getValue());
-           this.outText = "Cookie: " + hc.getName() + " \n"+ "Value: " + hc.getValue() + "\n";
+           this.outText += "Cookie: " + hc.getName() + " \n"+ "Value: " + hc.getValue() + "\n";
            outputScreen();
         }
+        System.out.println("Cookies Funtion Finished File Path : "+this.Path);
+        this.advance_createFile();
      } 
      public void W_R_Socket(int Port) {
         new Server(6666).start();
         new Client(6666).start();
+        this.createFile();
      }
     }
     
