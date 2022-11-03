@@ -42,3 +42,19 @@
 ![4](https://user-images.githubusercontent.com/107568580/198608491-6ba792e2-6bec-4174-86a4-76f9705f4b5a.png)
 
 >The Output Srceen Will Be Appear With Details You Asked 
+
+> Advance Tools 
+
+![adva](https://user-images.githubusercontent.com/107568580/199767792-80db1377-0c8a-4ca6-aa5e-bc8659afdb9d.png)
+
+>Advance Tools Frame Has Lot Of Tools To Use 
+
+>Let's Get The Read Cookies Of Goolge 
+
+>Enter https://www.google.com In The TextBox And Press The Read Cookies Button 
+
+>If You Like To Save The Result Press Save Button And Select The File 
+
+![out](https://user-images.githubusercontent.com/107568580/199768348-c3e5f358-cb18-4719-ac86-d35bf300efe5.png)
+
+>The Cookies Will Be On The Srceen!
