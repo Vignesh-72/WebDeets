@@ -100,8 +100,12 @@ public class deetsTerminal {
             this.createFile();
     }
     public void all_ipOf_Host(String URL){
+        String mainURL = "";
+        if(!URL.contains("http://")){
+            mainURL = "https://" + URL;
+        } 
         try {
-            InetAddress[] myHost = InetAddress.getAllByName(URL);
+            InetAddress[] myHost = InetAddress.getAllByName(mainURL);
             for (InetAddress inetAddress : myHost) {
                 this.outText += inetAddress.getHostAddress() + '\n';
                 System.out.println(outText);
@@ -114,6 +118,9 @@ public class deetsTerminal {
         
     }
     public void content_Of_WebPage(String URL) {
+        if(URL.contains("https://")){
+            URL = URL.substring(7);
+        }
         String line;
         URL url;
         InputStream urlStream;
@@ -133,6 +140,19 @@ public class deetsTerminal {
         this.advance_createFile();
     }
     public void port_scan(String URL)   {
+        if(URL.contains("https://") || URL.contains(".com") || URL.contains("wwww.")){
+            InetAddress[] addresses = null;  
+            URL = URL.substring(7);
+            try {
+                addresses = InetAddress.getAllByName(URL);
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
+            for (InetAddress inetAddress : addresses) {
+                URL  = inetAddress.toString();
+            } 
+        }  
+        final String mainURL = URL;
         ConcurrentLinkedQueue openPorts = new ConcurrentLinkedQueue<>();
         ExecutorService executorService = Executors.newFixedThreadPool(50);
         AtomicInteger port = new AtomicInteger(0);
@@ -141,11 +161,11 @@ public class deetsTerminal {
             executorService.submit(() -> {
                 try {
                     Socket socket = new Socket();
-                    socket.connect(new InetSocketAddress(URL, currentPort), 200);
+                    socket.connect(new InetSocketAddress(mainURL, currentPort), 200);
                     socket.close();
                     openPorts.add(currentPort);
-                    System.out.println(URL + " ,port open: " + currentPort);
-                    this.outText += URL + " ,port open: " + currentPort + "\n";     
+                    System.out.println(mainURL + " ,port open: " + currentPort);
+                    this.outText += mainURL + " ,port open: " + currentPort + "\n";     
                 }
                 catch (IOException e) {}
             });
@@ -263,6 +283,3 @@ class Server extends Thread {
     }
  }
   
-    
-
-
