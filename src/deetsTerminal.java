@@ -55,7 +55,7 @@ public class deetsTerminal {
     
     public void createFile()   {
 
-        System.out.println("Inside createFile() " + this.Path);
+        if(this.Path.equals("null"))return;
         
         try (FileWriter writer = new FileWriter(this.Path)) {
             for(String str: Results) {
@@ -68,6 +68,7 @@ public class deetsTerminal {
         
     }
     public void advance_createFile()   {
+        if(this.Path.equals("null")) return;
         System.out.println("Inside createFile() " + this.Path);
         
         try (FileWriter writer = new FileWriter(this.Path)) {
@@ -102,8 +103,10 @@ public class deetsTerminal {
     public void all_ipOf_Host(String URL){
         String mainURL = "";
         if(!URL.contains("http://")){
+            System.out.println("Not Contains https:// ");
             mainURL = "https://" + URL;
-        } 
+        }
+        System.out.println(mainURL);
         try {
             InetAddress[] myHost = InetAddress.getAllByName(mainURL);
             for (InetAddress inetAddress : myHost) {
@@ -121,6 +124,7 @@ public class deetsTerminal {
         if(URL.contains("https://")){
             URL = URL.substring(7);
         }
+        System.out.println(URL);
         String line;
         URL url;
         InputStream urlStream;
@@ -189,7 +193,11 @@ public class deetsTerminal {
     }
 
     public void Cookie (String str) throws IOException   {
-        System.out.println("Inside Cookise Function Path : "+ this.Path);
+
+        InetAddress[] address = InetAddress.getAllByName(str);
+        for (InetAddress inetAddress : address) {
+            str = inetAddress.toString();
+        }
         CookieManager cm = new CookieManager();
         CookieHandler.setDefault(cm);
    
@@ -283,3 +291,6 @@ class Server extends Thread {
     }
  }
   
+    
+
+
