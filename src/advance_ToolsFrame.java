@@ -1,26 +1,23 @@
-import java.io.IOException;
-
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Vicky
  */
-public class advance_ToolsFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form advance_ToolsFrame
-     */
-    public advance_ToolsFrame() {
-        initComponents();
-    }
+import java.io.IOException;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
+public class advance_ToolsFrame extends javax.swing.JFrame {
+    
     String path_Of_File = "null";
     deetsTerminal terminal = new deetsTerminal();
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code.
-     */private void initComponents() {
+    
+    public advance_ToolsFrame() {
+       
+        initComponents();
+    }
+
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -42,7 +39,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jButton1.setText("Read The Contents of a Web Page");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,7 +48,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jButton2.setText("Get All IP Addresses Of A Host");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,7 +57,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jButton3.setText(" Port Scanner");
         jButton3.setActionCommand("\nPort Scanner");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -70,8 +67,8 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jButton4.setText("Read and Write to Sockets");
+        jButton4.setFont(new java.awt.Font("Monospaced", 1, 14)); 
+        jButton4.setText("Http Response Header");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -79,7 +76,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
-        jButton5.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jButton5.setText("Read Cookie ");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +85,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton6.setBackground(new java.awt.Color(204, 204, 204));
-        jButton6.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jButton6.setText("Whois");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +94,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton7.setBackground(new java.awt.Color(204, 204, 204));
-        jButton7.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Monospaced", 1, 12)); 
         jButton7.setText("Back");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +103,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jTextField1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextField1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jTextField1.setText("  Enter IP Or URL");
         jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +113,7 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
 
         jButton8.setBackground(new java.awt.Color(204, 204, 204));
-        jButton8.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Monospaced", 1, 14)); 
         jButton8.setText("Save");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,9 +211,15 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         );
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         pack();
-    }// </editor-fold>         
+    }        
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) { 
+        thread2 = new Thread(){  
+            public void run(){  
+                terminal.outputScreen();
+              }  
+          };
+          thread2.start();                                        
         try {
             terminal.Cookie(jTextField1.getText());
         } catch (IOException e) {
@@ -224,29 +227,41 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         }
     }                                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {   
-                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {  
+        thread2 = new Thread(){  
+            public void run(){  
+                terminal.outputScreen();
+              }  
+          };    
+          thread2.start();                              
         terminal.content_Of_WebPage(jTextField1.getText());
     }                                        
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+
     }                                           
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        thread2 = new Thread(){  
+            public void run(){  
+                terminal.outputScreen();
+              }  
+          };
+          thread2.start();
         terminal.all_ipOf_Host(jTextField1.getText());
     }                                        
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+
     }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        Thread thread1 = new Thread(){  
+         thread1 = new Thread(){  
             public void run(){
                 new JOptionPane().showMessageDialog(null, "This May Take A Minute", "Port-Scan Info", JOptionPane.INFORMATION_MESSAGE);
               }  
           };  
-          Thread thread2 = new Thread(){  
+            thread2 = new Thread(){  
             public void run(){  
                 terminal.port_scan(jTextField1.getText());
               }  
@@ -260,10 +275,17 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
           thread2.start();
           thread3.start();
 
-    }private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
+    }private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {  
+        thread2 = new Thread(){  
+            public void run(){  
+                terminal.outputScreen();
+              }  
+          };
+        thread2.start();                                       
+        terminal.http_header(jTextField1.getText());        
     }                                        
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {   
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) { 
+          
        System.out.println("Creating JFileChooser ");                                       
         JFileChooser jFileChooser1 = new JFileChooser();
         int response = jFileChooser1.showOpenDialog(null);
@@ -274,12 +296,14 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         
     }
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
-    }      
+        this.setVisible(false);
+    }
+          
 
     /**
      * @param args the command line arguments
      */
+
     public static void main(String args[]) {
       
         try {
@@ -298,9 +322,8 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(advance_ToolsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+        
+        // Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new advance_ToolsFrame().setVisible(true);
@@ -308,7 +331,9 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
+    private Thread thread1;
+    private Thread thread2;                     
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -323,5 +348,5 @@ public class advance_ToolsFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField1;
-    // End of variables declaration                   
+    
 }
