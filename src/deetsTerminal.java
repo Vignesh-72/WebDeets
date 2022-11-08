@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -6,7 +5,27 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Authenticator;
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookieStore;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
+import java.net.PasswordAuthentication;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.URI;
+import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.List;
 
 public class deetsTerminal {
@@ -82,6 +101,7 @@ public class deetsTerminal {
     }
     public void outputScreen(){
         frame1.setVisible(true);
+        frame1.jTextArea1.setText("WebDeets [Version 1.0]  Creator : Vicky \n \n \n");
         frame1.jTextArea1.setText(outText);
     }
     public void deets_scan(int index){
@@ -102,7 +122,7 @@ public class deetsTerminal {
     }
     public void all_ipOf_Host(String URL){
         String mainURL = "";
-        if(!URL.contains("http://")){
+        if(!URL.contains("https://")){
             System.out.println("Not Contains https:// ");
             mainURL = "https://" + URL;
         }
@@ -191,18 +211,80 @@ public class deetsTerminal {
        this.advance_createFile();
         this.outputScreen();
     }
+    public void http_header(String URL) {
+        if(!URL.contains("http")){
+            URL = "http://" + URL;
+        }
 
+        String urlString = URL;
+        String username = "myname";
+        String password = "mypassword";
+        Authenticator.setDefault(new MyAuthenticator(username, password));
+     
+        URL url = null;
+        try {
+            url = new URL(urlString);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        InputStream content = null;
+        try {
+            content = (InputStream) url.getContent();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        InputStreamReader isr = new InputStreamReader(content);
+        BufferedReader in = new BufferedReader(isr);
+     
+        String line;
+        try {
+            while ((line = in.readLine()) != null) {
+              System.out.println(line);
+              this.outText += line.toString() + "\n";
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        outputScreen();
+        createFile();
+    }
+
+    
+class MyAuthenticator extends Authenticator {
+    private String username, password;
+ 
+    public MyAuthenticator(String username, String password) {
+      this.username = username;
+      this.password = password;
+    }
+ 
+    protected PasswordAuthentication getPasswordAuthentication() {
+      System.out.println("Requesting Host  : " + getRequestingHost());
+      System.out.println("Requesting Port  : " + getRequestingPort());
+      System.out.println("Requesting Prompt : " + getRequestingPrompt());
+      System.out.println("Requesting Protocol: " + getRequestingProtocol());
+      System.out.println("Requesting Scheme : " + getRequestingScheme());
+      System.out.println("Requesting Site  : " + getRequestingSite());
+      return new PasswordAuthentication(username, password.toCharArray());
+    }
+}
     public void Cookie (String str) throws IOException   {
 
+
         InetAddress[] address = InetAddress.getAllByName(str);
+        
+        String IP = "";
         for (InetAddress inetAddress : address) {
-            str = inetAddress.toString();
+             IP = inetAddress.toString();
         }
+        System.out.println("       :"+IP);
+        System.out.println("IP :" + IP);
         CookieManager cm = new CookieManager();
         CookieHandler.setDefault(cm);
-   
-        URL url = new URL(str);
-        URLConnection con = url.openConnection();
+        System.out.println("IP O :"+IP);
+        URL url = new URL(IP);
+        
+        java.net.URLConnection con = url.openConnection();
         con.getContent();
    
         CookieStore cs = cm.getCookieStore();
@@ -213,8 +295,8 @@ public class deetsTerminal {
            this.outputScreen();
         }
    
-        List<HttpCookie> hcList = cs.getCookies();
-        for (HttpCookie hc : hcList) {
+        List<java.net.HttpCookie> hcList = cs.getCookies();
+        for (java.net.HttpCookie hc : hcList) {
            System.out.println("Cookie: " + hc.getName());
            System.out.println("Value: " + hc.getValue());
            this.outText += "Cookie: " + hc.getName() + " \n"+ "Value: " + hc.getValue() + "\n";
@@ -287,10 +369,8 @@ class Server extends Thread {
              socket.close();
           }
        } catch (Exception e) {
+        e.fillInStackTrace();
        }
     }
  }
-  
-    
-
-
+     
