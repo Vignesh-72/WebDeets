@@ -43,7 +43,6 @@ public class deetsTerminal {
     ouputScreen frame1 = new ouputScreen();
    
     public void process()  {
-        System.out.println("Processing ! :" + Command);
          try {
             process = Runtime.getRuntime().exec(Command);
         } catch (IOException e) {
@@ -100,13 +99,11 @@ public class deetsTerminal {
 
     }
     public void outputScreen(){
+        this.frame1.jLabel3.setText(" ");
         frame1.setVisible(true);
-        frame1.jTextArea1.setText("WebDeets [Version 1.0]  Creator : Vicky \n \n \n");
         frame1.jTextArea1.setText(outText);
     }
     public void deets_scan(int index){
-
-        System.out.println("deets_scan");
         ArrayList<String> netStatCommand = new ArrayList<>();
         netStatCommand.add("netstat -a");
         netStatCommand.add("netstat -b");
@@ -118,9 +115,11 @@ public class deetsTerminal {
         
             Command = netStatCommand.get(index);
             this.process();
+            this.outputScreen();
             this.createFile();
     }
-    public void all_ipOf_Host(String URL){
+
+	public void all_ipOf_Host(String URL){
         String mainURL = "";
         if(!URL.contains("https://")){
             System.out.println("Not Contains https:// ");
@@ -137,10 +136,12 @@ public class deetsTerminal {
         } catch (Exception e) {
            e.printStackTrace();
         }
+        this.outputScreen();
         this.advance_createFile();
         
     }
     public void content_Of_WebPage(String URL) {
+       
         if(URL.contains("https://")){
             URL = URL.substring(7);
         }
@@ -164,6 +165,7 @@ public class deetsTerminal {
         this.advance_createFile();
     }
     public void port_scan(String URL)   {
+        
         if(URL.contains("https://") || URL.contains(".com") || URL.contains("wwww.")){
             InetAddress[] addresses = null;  
             URL = URL.substring(7);
@@ -212,6 +214,7 @@ public class deetsTerminal {
         this.outputScreen();
     }
     public void http_header(String URL) {
+        
         if(!URL.contains("http")){
             URL = "http://" + URL;
         }
@@ -269,7 +272,8 @@ class MyAuthenticator extends Authenticator {
     }
 }
     public void Cookie (String str) throws IOException   {
-
+        this.frame1.jLabel3.setText("Loading...");
+        this.outputScreen();
 
         InetAddress[] address = InetAddress.getAllByName(str);
         
