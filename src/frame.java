@@ -4,22 +4,12 @@
  */
 public class frame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
+   
     public frame() {
         this.setTitle("WebDeets");
         initComponents();
     }
-    pc_infoFrame infoFrame = new pc_infoFrame();
-    deets_scanFrame scanFrame = new deets_scanFrame();
-    advance_ToolsFrame toolsFrame = new advance_ToolsFrame();
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code
-     */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -38,10 +28,10 @@ public class frame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Monospaced", 0, 19)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Monospaced", 0, 19)); 
         jLabel1.setText("  WebDeets");
 
-        jLabel2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Monospaced", 0, 14)); 
         jLabel2.setText("Version 0.1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -148,27 +138,27 @@ public class frame extends javax.swing.JFrame {
         pack();
     }     
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        pc_infoFrame infoFrame = new pc_infoFrame();
         infoFrame.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        advance_ToolsFrame toolsFrame = new advance_ToolsFrame();
         toolsFrame.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {   
+        deets_scanFrame scanFrame = new deets_scanFrame();
         scanFrame.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
      */
+
     public static void main() {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -185,9 +175,8 @@ public class frame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+       
+        // Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frame().setVisible(true);
@@ -195,7 +184,7 @@ public class frame extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -205,5 +194,4 @@ public class frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    // End of variables declaration//GEN-END:variables
 }
