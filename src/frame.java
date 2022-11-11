@@ -1,12 +1,16 @@
+package webdeets;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Vicky
  */
-public class frame extends javax.swing.JFrame {
+class frame extends javax.swing.JFrame {
 
    
     public frame() {
         this.setTitle("WebDeets");
+        ImageIcon icon = new ImageIcon("Blue_Modern_Vezzra_Modern_Technology_Logo__1_-removebg-preview.ico");
+        this.setIconImage(icon.getImage());
         initComponents();
     }
     
