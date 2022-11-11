@@ -1,4 +1,3 @@
-package webdeets;
 import javax.swing.ImageIcon;
 /**
  *
