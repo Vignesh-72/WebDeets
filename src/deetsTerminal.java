@@ -1,3 +1,4 @@
+package webdeets;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -28,7 +29,7 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.List;
 
-public class deetsTerminal {
+class deetsTerminal {
 
     public
 
@@ -43,6 +44,7 @@ public class deetsTerminal {
     ouputScreen frame1 = new ouputScreen();
    
     public void process()  {
+        this.frame1.jLabel3.setText("Loading...");
          try {
             process = Runtime.getRuntime().exec(Command);
         } catch (IOException e) {
@@ -99,9 +101,31 @@ public class deetsTerminal {
 
     }
     public void outputScreen(){
-        this.frame1.jLabel3.setText(" ");
+       
         frame1.setVisible(true);
-        frame1.jTextArea1.setText(outText);
+
+            this.frame1.jLabel3.setText("Loading...");
+            frame1.jTextArea1.setText(outText);
+            this.frame1.jLabel3.setText(" ");
+        
+    }
+    public void pinging_Start(int index , String link){
+        ArrayList<String> pingingCommand = new ArrayList<>();
+        pingingCommand.add("ping ");
+        pingingCommand.add("ping -n 10 ");
+        pingingCommand.add("ping -l 64 ");
+        pingingCommand.add("ping -s 4 ");
+        pingingCommand.add("ping -r 10 ");
+        pingingCommand.add("ping ");
+        pingingCommand.add("ping -i 10 ");
+
+        Command = pingingCommand.get(index) + link;
+
+        
+        this.process();
+        this.outputScreen();
+        this.createFile();
+        
     }
     public void deets_scan(int index){
         ArrayList<String> netStatCommand = new ArrayList<>();
@@ -114,20 +138,21 @@ public class deetsTerminal {
         netStatCommand.add("netstat -v");
         
             Command = netStatCommand.get(index);
+            this.frame1.jLabel3.setText("Loading...");
             this.process();
             this.outputScreen();
             this.createFile();
     }
 
 	public void all_ipOf_Host(String URL){
-        String mainURL = "";
-        if(!URL.contains("https://")){
-            System.out.println("Not Contains https:// ");
-            mainURL = "https://" + URL;
+        this.frame1.jLabel3.setText("Loading...");
+        if(URL.contains("https://")){
+            URL = URL.substring(8);
         }
-        System.out.println(mainURL);
+       
+        System.out.println(URL);
         try {
-            InetAddress[] myHost = InetAddress.getAllByName(mainURL);
+            InetAddress[] myHost = InetAddress.getAllByName(URL);
             for (InetAddress inetAddress : myHost) {
                 this.outText += inetAddress.getHostAddress() + '\n';
                 System.out.println(outText);
@@ -141,9 +166,10 @@ public class deetsTerminal {
         
     }
     public void content_Of_WebPage(String URL) {
-       
-        if(URL.contains("https://")){
-            URL = URL.substring(7);
+        this.frame1.jLabel3.setText("Loading...");
+        if(!URL.contains("https://")){
+            System.out.println("Not Contains https:// ");
+            URL = "https://" + URL;
         }
         System.out.println(URL);
         String line;
@@ -161,24 +187,20 @@ public class deetsTerminal {
         } catch (Exception e) {
             e.fillInStackTrace();
         }
+        this.frame1.jLabel3.setText("");
         this.outputScreen();
         this.advance_createFile();
     }
-    public void port_scan(String URL)   {
-        
-        if(URL.contains("https://") || URL.contains(".com") || URL.contains("wwww.")){
-            InetAddress[] addresses = null;  
-            URL = URL.substring(7);
-            try {
-                addresses = InetAddress.getAllByName(URL);
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            }
+    public void port_scan(String URL) throws UnknownHostException   {
+        this.frame1.jLabel3.setText("Loading...");
+            InetAddress[] addresses = InetAddress.getAllByName(URL);
             for (InetAddress inetAddress : addresses) {
-                URL  = inetAddress.toString();
+                URL = inetAddress.toString();
             } 
-        }  
-        final String mainURL = URL;
+        
+        final String main_URL = URL.substring(URL.indexOf("/")+1);
+        final String url_Head = URL;
+
         ConcurrentLinkedQueue openPorts = new ConcurrentLinkedQueue<>();
         ExecutorService executorService = Executors.newFixedThreadPool(50);
         AtomicInteger port = new AtomicInteger(0);
@@ -187,11 +209,11 @@ public class deetsTerminal {
             executorService.submit(() -> {
                 try {
                     Socket socket = new Socket();
-                    socket.connect(new InetSocketAddress(mainURL, currentPort), 200);
+                    socket.connect(new InetSocketAddress(main_URL, currentPort), 200);
                     socket.close();
                     openPorts.add(currentPort);
-                    System.out.println(mainURL + " ,port open: " + currentPort);
-                    this.outText += mainURL + " ,port open: " + currentPort + "\n";     
+                    System.out.println(url_Head + " ,port open: " + currentPort);
+                    this.outText += url_Head + " ,port open: " + currentPort + "\n";     
                 }
                 catch (IOException e) {}
             });
@@ -210,11 +232,12 @@ public class deetsTerminal {
             openPortList.add(openPorts.poll());
         }
         
+        this.frame1.jLabel3.setText("");
        this.advance_createFile();
         this.outputScreen();
     }
     public void http_header(String URL) {
-        
+        this.frame1.jLabel3.setText("Loading..."); 
         if(!URL.contains("http")){
             URL = "http://" + URL;
         }
@@ -248,6 +271,7 @@ public class deetsTerminal {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.frame1.jLabel3.setText("");
         outputScreen();
         createFile();
     }
@@ -273,16 +297,9 @@ class MyAuthenticator extends Authenticator {
 }
     public void Cookie (String str) throws IOException   {
         this.frame1.jLabel3.setText("Loading...");
-        this.outputScreen();
-
-        InetAddress[] address = InetAddress.getAllByName(str);
-        
-        String IP = "";
-        for (InetAddress inetAddress : address) {
-             IP = inetAddress.toString();
-        }
-        System.out.println("       :"+IP);
-        System.out.println("IP :" + IP);
+        if(str.contains("http://") || str.contains("https://")){
+           
+        final String IP = str;
         CookieManager cm = new CookieManager();
         CookieHandler.setDefault(cm);
         System.out.println("IP O :"+IP);
@@ -306,8 +323,14 @@ class MyAuthenticator extends Authenticator {
            this.outText += "Cookie: " + hc.getName() + " \n"+ "Value: " + hc.getValue() + "\n";
            outputScreen();
         }
+        
+        this.frame1.jLabel3.setText("");
         System.out.println("Cookies Funtion Finished File Path : "+this.Path);
         this.advance_createFile();
+    }
+    else{
+        Cookie("https://"+str);
+    }
      } 
      public void W_R_Socket(int Port) {
         new Server(6666).start();
@@ -316,7 +339,7 @@ class MyAuthenticator extends Authenticator {
      }
     }
     
- 
+
 class Server extends Thread {
     Socket socket = null ;
     ObjectInputStream ois = null;
