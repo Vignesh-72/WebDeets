@@ -1,5 +1,7 @@
 # WebDeets-App
 
+![Blue_Modern_Vezzra_Modern_Technology_Logo-removebg-preview](https://user-images.githubusercontent.com/107568580/201526494-86da54de-ffed-4a6b-b537-102a3df8e77f.png)
+
 ![Untitled](https://user-images.githubusercontent.com/107568580/201525550-c4de209d-1d8a-4c6a-87c9-71fb2733b5e2.png)
 
 >Start-Up Preview
