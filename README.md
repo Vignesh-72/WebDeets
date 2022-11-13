@@ -58,6 +58,6 @@
 
 >The Cookies Will Be On The Srceen!
 
-![image](https://user-images.githubusercontent.com/107568580/201525920-b694d9f9-28b3-4642-a9af-f46191797224.png)
+![image](https://user-images.githubusercontent.com/107568580/201526065-fc58b3a9-2326-4b6f-b79d-7dfbbfe0d127.png)
 
->Note ! The App Is In Still Devoplement Stage Some Of Tools Don't Work And Little Slow And As Some Bug I Will Some Fix It And New Version Will Be Avalible As >Soon Posible Till That You Can Use The App It Works Perfect 
+>Note ! The App Is In Still Devoplement Stage Some Of Tools Don't Work And Little Slow And As Some Bug I Will Some Fix It And New Version Will Be Avalible As Soon Posible Till That You Can Use The App It Works Perfect 
