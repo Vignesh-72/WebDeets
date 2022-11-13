@@ -1,6 +1,6 @@
 # WebDeets-App
 
-![Untitled](https://user-images.githubusercontent.com/107568580/197456339-dad9e380-b4db-431c-ac72-7942e19e1944.png)
+![Untitled](https://user-images.githubusercontent.com/107568580/201525550-c4de209d-1d8a-4c6a-87c9-71fb2733b5e2.png)
 
 >Start-Up Preview
 
@@ -16,18 +16,17 @@
 >
 >• Supported Only In Windows
 
-
-![pc_info](https://user-images.githubusercontent.com/107568580/197766502-5148d8cc-af01-4bae-b6e4-f95d6eea6859.png)
+![image](https://user-images.githubusercontent.com/107568580/201525594-97e809ec-ebef-4524-828c-84a04cf65a5c.png)
 
 > Pc-Info Preview
 
-![deets_scan](https://user-images.githubusercontent.com/107568580/197766612-a0519810-19f3-405d-8c37-7ded53d961ae.png)
+![image](https://user-images.githubusercontent.com/107568580/201525637-5f208e42-84b7-4a0c-b2b1-b9e3d0680776.png)
 
 > Deets-Scan Preview
  
  >Preview How The App Work
  
-![2](https://user-images.githubusercontent.com/107568580/198605857-7f371dbd-a14a-47d4-87b0-358523a90c2b.png)
+![image](https://user-images.githubusercontent.com/107568580/201525681-ee1967ec-6969-4639-ac36-1bf16d343b0f.png)
 
 >Select The Option 
 
@@ -39,13 +38,15 @@
 
 >The Press Start Button
 
-![4](https://user-images.githubusercontent.com/107568580/198608491-6ba792e2-6bec-4174-86a4-76f9705f4b5a.png)
+![image](https://user-images.githubusercontent.com/107568580/201525808-32e8285b-e105-4c36-b18b-bbf3d9ab1992.png)
+
+>It Will Take Some Second Till Wait 
 
 >The Output Srceen Will Be Appear With Details You Asked 
 
 > Advance Tools 
 
-![adva](https://user-images.githubusercontent.com/107568580/199767792-80db1377-0c8a-4ca6-aa5e-bc8659afdb9d.png)
+![image](https://user-images.githubusercontent.com/107568580/201525906-12757182-a25f-48f6-8290-953e85b6f57e.png)
 
 >Advance Tools Frame Has Lot Of Tools To Use 
 
@@ -55,6 +56,8 @@
 
 >If You Like To Save The Result Press Save Button And Select The File 
 
-![out](https://user-images.githubusercontent.com/107568580/199768348-c3e5f358-cb18-4719-ac86-d35bf300efe5.png)
-
 >The Cookies Will Be On The Srceen!
+
+![image](https://user-images.githubusercontent.com/107568580/201525920-b694d9f9-28b3-4642-a9af-f46191797224.png)
+
+>Note ! The App Is In Still Devoplement Stage Some Of Tools Don't Work And Little Slow And As Some Bug I Will Some Fix It And New Version Will Be Avalible As >Soon Posible Till That You Can Use The App It Works Perfect 
