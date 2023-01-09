@@ -29,7 +29,7 @@ WebDeets Application Provide Various Features And Tools To Make Website Analysis
 <i>	
 </h3><br>
 	
-<h1>📺 WebDeets Preview</h1>
+<h1>📺 WebDeets Preview & How To Use</h1>
 <h3>💬 On Statring Up The WebDeets Application The Preview Will Be As Show Down.</h3>
 	
 ![startup](https://user-images.githubusercontent.com/107568580/211330711-edc32d5f-6b0c-49e1-97e0-9775c5e02581.png)
@@ -61,7 +61,7 @@ Pic-1.0
 ![211343090-fcb5d230-e593-45f7-bc0f-14fb021cecb9](https://user-images.githubusercontent.com/107568580/211343628-92b4eb48-7048-435f-9fb4-ebcbcbb26bdc.png)
 <br>
 <h3>
-● To Display All The Connection And Ports Of Your Pc You Need To Select The Checkbox Named As Display All The Connection And Port
+💬 To Display All The Connection And Ports Of Your Pc You Need To Select The Checkbox Named As Display All The Connection And Port
 <br>
 <br>
 Pic-1.1 
@@ -97,7 +97,7 @@ Pic-1.3
         
 <h1>🔰 Pinging Preview: </h1>
 <h3>
-● Pinging Frame Contains Some Of The Pinging Commands Preloaded In It You Can Use Those By Selection The Checkbox And Pressing The Start ButtonEnter The IP Address Or The Url In Text Field In The Upper Right Side <br>  
+💬 Pinging Frame Contains Some Of The Pinging Commands Preloaded In It You Can Use Those By Selection The Checkbox And Pressing The Start ButtonEnter The IP Address Or The Url In Text Field In The Upper Right Side <br>  
 </h3>
 <h2>🌠 Pinging Features: </h1>
 <h3>
@@ -147,7 +147,7 @@ Pic – 1.7 </h3>
 ● Can Convert Host To IP <br>
 ● Deets-Scan (Run All The Pinging Command in The Pic-1.4) 
 <br><br>
-● To Convert Host Address To IP Address Enter The Host Address In The Text Field In The Left Down Corner And Press The Convert Host To IP Button.<br> 
+💬 To Convert Host Address To IP Address Enter The Host Address In The Text Field In The Left Down Corner And Press The Convert Host To IP Button.<br> 
 </h3>
  
 <h3>Pic-1.8</h3> 
@@ -169,7 +169,7 @@ Pic – 1.7 </h3>
 ● The Result Is Show In The Result Screen <br>
 </h3>
 <h1>🔰Advance-Tools Preview:<h1>
-<h3>● Advance-Tools Contains Lots Of Features In It Which Helps To Analysis And Development Of Websites.</h3>
+<h3>💬 Advance-Tools Contains Lots Of Features In It Which Helps To Analysis And Development Of Websites.</h3>
 <h2>🌠 Advance-Tools Features:</h2>
 <h3>
 ● Whois <br>
