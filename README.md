@@ -1,13 +1,14 @@
 <h1>🌐WebDeets</h1>
 <h3>
+
 WebDeets Application Provide Various Features And Tools To Make Website Analysis And Development And Other Networking Works Easier. 
 </h3>
 
 
 <h2>☕ Download:</h2>
 <h3>
-✔️ Version 1.0   :www.WebDeets\Download\version-1.0.com <br>
-✔️ Version [BETA]:www.WebDeets\Download\version-BETA.com <br>
+✔️ Version 1.0   :waiting <br>
+✔️ Version [BETA]:waiting <br>
 </h3>
  
 <h2>📢 Version-Info:</h2> 
