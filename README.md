@@ -7,7 +7,7 @@ WebDeets Application Provides Various Features And Tools To Make Website Analysi
 <h2>☕ Download:</h2>
 <h3>
 ✔️ Version 1.0   : waiting <br>
-✔️ Version [BETA]: waiting <br>
+✔️ Version [BETA]: https://sourceforge.net/projects/webdeets/ <br>
 </h3>
  
 <h2>📢 Version-Info:</h2> 
