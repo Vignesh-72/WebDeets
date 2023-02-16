@@ -1,8 +1,10 @@
 <h1>🌐WebDeets</h1>
 <h3>
-WebDeets Application Provides Various Features And Tools To Make Website Analysis And Development And Other Networking Works Easier. 
+WebDeets Is A Versatile Network Utility App That can convert IP Addresses To Hostnames And Vice Versa, And Comes With Preloaded Commands Like Netstat And Ping.<br><br> It Also Has Features Like Port Scanning, Reading Web Content, Cookies, And HTTP Response Headers. 
+<br>
+<br>
+It Allows You To Save Results In Different Formats And Has A Real-Time Terminal Feature. Overall, It's A Powerful Tool For Network Administrators And IT Professionals
 </h3>
-
 
 <h2>☕ Download:</h2>
 <h3>
@@ -196,4 +198,15 @@ Pic – 1.7 </h3>
     
 ![image](https://user-images.githubusercontent.com/107568580/211350037-daa2efca-a735-4469-8003-1b48bab3446c.png)
 
+<br><br>
+<h1>Detailed Description</h1>
+<h3WebDeets is a powerful and versatile network utility app that provides a wide range of tools and features to help you manage and diagnose network issues. With WebDeets, you can easily convert IP addresses to hostnames and vice versa. The app also comes preloaded with a range of useful network commands, including netstat and ping, making it easy to quickly perform common networking tasks.
+<br><br>
+One of the key features of WebDeets is its ability to display all IP addresses associated with a particular host. This can be extremely helpful when troubleshooting DNS or routing issues. Additionally, the app allows you to read the content of a webpage directly within the app, making it easy to analyze web traffic without having to switch between different applications.
+<br><br>
+WebDeets also includes a powerful port scanner, which can help you identify open ports and potential vulnerabilities in your network. With the port scanner, you can quickly scan for open ports on a particular host or a range of IP addresses. The app also allows you to read cookies and HTTP response headers, providing detailed information about web requests and responses.
+<br><br>
+One of the key features of WebDeets is its ability to save the output of any command in a variety of formats, including text, CSV, and JSON. This makes it easy to document your network activity and share information with other team members. In addition, WebDeets includes a terminal feature that shows the result of any function in real-time. This can be helpful when you need to quickly see the output of a particular command.
+<br><br>
+Overall, WebDeets is a must-have tool for any network administrator or IT professional. With its powerful features and intuitive interface, you'll be able to quickly diagnose and resolve a wide range of network issues. Whether you need to troubleshoot DNS issues, analyze web traffic, or identify network vulnerabilities, WebDeets has got you covered.><h3>
     
