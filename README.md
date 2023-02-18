@@ -14,7 +14,7 @@ It Allows You To Save Results In Different Formats And Has A Real-Time Terminal 
  
 <h2>📢 Version-Info:</h2> 
 <h3>
-Ｏ There Are Two Versions Available BETA And Version 1.0 The Beta Version Is Unstable <br>
+Ｏ There Are Two Versions Available BETA And Version 1.0 <br>
 Ｏ Recommend Version For WebDeets Is Version 1.0 <br> 
 Ｏ It Is Stable The Entire Bug Are Fixed And Faster And Extra Tools Were Added <br>
 Ｏ Upcoming Version 1.1 On April 30 With Tones Of New Features <br> 
