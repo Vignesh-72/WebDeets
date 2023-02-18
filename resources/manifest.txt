@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Main-Class: Application
+Class-Path: bin/Application.class
+
+
+
+
+
+
