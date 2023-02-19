@@ -8,8 +8,8 @@ It Allows You To Save Results In Different Formats And Has A Real-Time Terminal 
 
 <h2>☕ Download:</h2>
 <h3>
-✔️ Version 1.0   : https://sourceforge.net/projects/webdeets/  <br>
-✔️ Version [BETA]: https://sourceforge.net/projects/webdeets/files/WebDeets/ <br>
+✔️ Version 1.0   : https://sourceforge.net/projects/webdeets  <br>
+✔️ Version [BETA]: https://sourceforge.net/projects/webdeets/files/WebDeets <br>
 </h3>
  
 <h2>📢 Version-Info:</h2> 
