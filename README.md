@@ -214,3 +214,7 @@ In addition to these core features, WebDeets also includes the ability to read c
 WebDeets also allows you to save the results of any of its features in any format, giving you maximum flexibility in how you work with and share the data you gather. And with its real-time terminal feature, you can see the results of any function as soon as it's completed, making it easy to troubleshoot network issues on the fly.
 <br><br>
 Overall, WebDeets is a powerful, comprehensive, and easy-to-use network utility app that's essential for any network administrator or IT professional. Whether you're diagnosing a specific network issue or simply monitoring network performance, WebDeets has the tools you need to get the job done quickly and effectively.
+
+## Authors
+
+- [@Vicky](https://www.instagram.com/vicky__v72/)
