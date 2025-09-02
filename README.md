@@ -1,4 +1,4 @@
-<h1>🌐WebDeets</h1>
+<h1>🌐WebDeets <img src="https://img.shields.io/sourceforge/dt/webdeets" alt="SourceForge Downloads"> </h1> 
 <h3>
 WebDeets Is A Versatile Network Utility App That can convert IP Addresses To Hostnames And Vice Versa, And Comes With Preloaded Commands Like Netstat And Ping.<br><br> It Also Has Features Like Port Scanning, Reading Web Content, Cookies, And HTTP Response Headers. 
 <br>
@@ -6,7 +6,8 @@ WebDeets Is A Versatile Network Utility App That can convert IP Addresses To Hos
 It Allows You To Save Results In Different Formats And Has A Real-Time Terminal Feature. Overall, It's A Powerful Tool For Network Administrators And IT Professionals
 </h3>
 
-<h2>☕ Download:</h2>
+<h2>☕ Download: </h2>
+
 <h3>
 ✔️ Version 1.0   : https://sourceforge.net/projects/webdeets  <br>
 ✔️ Version [BETA]: https://sourceforge.net/projects/webdeets/files/WebDeets <br>
@@ -218,3 +219,4 @@ Overall, WebDeets is a powerful, comprehensive, and easy-to-use network utility 
 ## Authors
 
 - [@Vicky](https://www.instagram.com/vicky__v72/)
+
